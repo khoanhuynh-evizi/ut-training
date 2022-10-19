@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot 1`] = `
+<div
+  className="counter"
+>
+  <h2>
+    0
+  </h2>
+  <button
+    className="decrement"
+    onClick={[Function]}
+  >
+    -
+  </button>
+  <button
+    className="reset"
+    onClick={[Function]}
+  >
+    reset
+  </button>
+  <button
+    className="increment"
+    onClick={[Function]}
+  >
+    +
+  </button>
+</div>
+`;

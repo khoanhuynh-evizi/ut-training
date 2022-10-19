@@ -14,6 +14,6 @@ it('should match the snapshot', () => {
   expect(shallowToJson(wrapper)).toMatchSnapshot();
 });
 
-it('has render <Counter /> components', () => {
+it('has render <Counter /> component', () => {
   expect(wrapper.find(Counter)).toHaveLength(1);
 });
