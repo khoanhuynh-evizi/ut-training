@@ -1,12 +1,12 @@
 import React from 'react';
-import StopWatch from './components/Stopwatch';
+import Counter from './components/Counter';
 import './App.css';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>React StopWatch</h1>
-      <StopWatch />
+      <h1>React Counter</h1>
+      <Counter />
     </div>
   );
 }

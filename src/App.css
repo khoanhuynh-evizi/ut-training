@@ -27,4 +27,5 @@ button {
   font-weight: 800;
   padding: 8px 16px;
   background-color: transparent;
+  cursor: pointer;
 }
