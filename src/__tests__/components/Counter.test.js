@@ -7,7 +7,13 @@ let wrapper
 
 beforeEach(() => {
   wrapper = shallow(<Counter />);
+  jest.spyOn(global.Math, 'random').mockReturnValue(0.2308);
 });
+
+afterEach(() => {
+  jest.spyOn(global.Math, 'random').mockRestore();
+})
+
 
 it('should match the snapshot', () => {
   expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -30,7 +36,7 @@ describe('renders without error', () => {
 })
 
 describe("Increment", () => {
-  it("clicking on button increments counter display", () => {
+  it("click increment button", () => {
     const wrapper = shallow(<Counter />);
 
     const increment = wrapper.find('.increment');
@@ -42,7 +48,7 @@ describe("Increment", () => {
 
 
 describe("Decrement", () => {
-  it("clicking on button decrement counter display", () => {
+  it("click decrement button", () => {
     const wrapper = shallow(<Counter />);
 
     const decrement = wrapper.find('.decrement');
@@ -54,7 +60,7 @@ describe("Decrement", () => {
 
 
 describe("Reset", () => {
-  it("clicking on button reset counter display", () => {
+  it("click reset button", () => {
     const wrapper = shallow(<Counter />);
 
     const decrement = wrapper.find('.decrement');
@@ -66,6 +72,24 @@ describe("Reset", () => {
     reset.simulate('click');
 
     expect(wrapper.find('h2').text()).toBe("0")
+
+  });
+});
+
+
+describe("Random", () => {
+  it("click random button", () => {
+    const wrapper = shallow(<Counter />);
+
+    const decrement = wrapper.find('.decrement');
+    decrement.simulate('click');
+
+    expect(wrapper.find('h2').text()).toBe("-1")
+
+    const reset = wrapper.find('.random');
+    reset.simulate('click');
+
+    expect(wrapper.find('h2').text()).toBe("23")
 
   });
 });

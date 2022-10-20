@@ -7,6 +7,8 @@ const Counter = () => {
 
   const reset = () => setCounter(0)
 
+  const random = () => setCounter(Math.round(Math.random() * 100))
+
   const increment = () => setCounter(counter + 1)
 
   return (
@@ -15,6 +17,7 @@ const Counter = () => {
 
       <button className="decrement" onClick={decrement}>-</button>
       <button className="reset" onClick={reset}>reset</button>
+      <button className="random" onClick={random}>random</button>
       <button className="increment" onClick={increment}>+</button>
 
     </div>

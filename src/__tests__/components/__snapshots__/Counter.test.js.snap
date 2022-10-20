@@ -20,6 +20,12 @@ exports[`should match the snapshot 1`] = `
     reset
   </button>
   <button
+    className="random"
+    onClick={[Function]}
+  >
+    random
+  </button>
+  <button
     className="increment"
     onClick={[Function]}
   >
