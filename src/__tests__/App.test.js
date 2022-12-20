@@ -1,17 +1,24 @@
 import React from "react";
-import { shallow } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+import { mount } from 'enzyme';
+import { mountToJson } from 'enzyme-to-json';
 import App from '../App';
 import Counter from '../components/Counter'
+import { JSDOM } from 'jsdom'
+
+const { window } = new JSDOM()
+const { document } = window
 
 let wrapper 
 
+global.window = window;
+global.document = document;
+
 beforeEach(() => {
-  wrapper = shallow(<App />);
+  wrapper = mount(<App />);
 });
 
 it('should match the snapshot', () => {
-  expect(shallowToJson(wrapper)).toMatchSnapshot();
+  expect(mountToJson(wrapper)).toMatchSnapshot();
 });
 
 it('has render <Counter /> component', () => {
